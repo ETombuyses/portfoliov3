@@ -1,3 +1,6 @@
+//issue : mouseenter and mouseleave not triggered in firefox and safari
+//fix: mouseover and mouseout are working fine
+
 class CursorPosition {
   constructor(cursor) {
     this.x = 0;
@@ -11,7 +14,7 @@ class CursorPosition {
       cursor.style.top = this.y + 'px';
     })
 
-    window.addEventListener('scroll', (event) => {
+    window.addEventListener('scroll', () => {
       let currentScrollY = window.scrollY;
       let deltaScrollY = currentScrollY - lastScrollY;
       this.y = this.y + deltaScrollY;
@@ -19,10 +22,11 @@ class CursorPosition {
       lastScrollY = currentScrollY;
     })
 
-    document.addEventListener('mouseenter', () => {
+    document.addEventListener('mouseover', () => {
       cursor.style.display='block';
     })
-    document.addEventListener('mouseleave', () => {
+
+    document.addEventListener('mouseout', () => {
       cursor.style.display='none';
     })
 
