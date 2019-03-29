@@ -1,5 +1,18 @@
-@keyframes flipcard {
+
+@keyframes scrolldown{
+  40% {
+    opacity: 1;
+  }
+
   100% {
-    transform: rotateY(180deg)
+    top: 60%;
+    opacity: 0;
+    transform: translate(-50%) scale(0.5);
+  }
+}
+
+@keyframes visible {
+  100% {
+    opacity: 1;
   }
 }

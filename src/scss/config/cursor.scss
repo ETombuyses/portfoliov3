@@ -10,4 +10,5 @@ body {
   display: none;
   z-index: 100;
   transition: 0.2s ease-out ;
+  pointer-events: none;
 }
