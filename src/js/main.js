@@ -66,12 +66,15 @@ function showTitle(title) {
   const offsetTop = title.parentNode.offsetTop;
   let currentScroll = window.scrollY + window.innerHeight;
 
-  if (currentScroll > offsetTop + 200) {
+  if (currentScroll > offsetTop + 100) {
     title.classList.add('is-showed');
   }
 }
 
 for (let i=0; i < titles.length; i++) {
+  
+  showTitle(titles[i]);
+  
   document.addEventListener('scroll', () => {
     showTitle(titles[i]);
   });
