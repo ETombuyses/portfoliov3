@@ -1,7 +1,7 @@
 .about {
   background: var(--black);
   color: var(--white);
-  padding: 50px;
+  padding: 60px;
   width: 100vw;
   position: relative;
   overflow: hidden;
@@ -22,14 +22,19 @@
 
 .about__text {
   line-height: 150%;
-  padding-bottom: 20px;
   text-align: justify;
+  font-size: 14px;
+
+  &:not(:last-child) {
+    padding-bottom: 20px;
+  }
 
   strong {
     text-transform: uppercase;
     font-weight: bolder;
   }
 }
+
 
 .about__link {
   color: var(--white);

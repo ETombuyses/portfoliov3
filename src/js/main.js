@@ -31,15 +31,24 @@ main.addEventListener('click', () => {
 
 const darkSections = document.querySelectorAll("[data-color='dark']")
 
-darkSections.forEach(section => {
+function menuColorChange(section) {
   const offsetTop = section.offsetTop;
+  currentScroll = window.scrollY + window.innerHeight;
+
+  menuBurger.classList.toggle('is-white-bottom', currentScroll > offsetTop + 15);
+  menuBurger.classList.toggle('is-white-top', currentScroll > offsetTop + 45);
+}
+
+darkSections.forEach(section => {
 
   document.addEventListener('scroll', () => {
-    currentScroll = window.scrollY + window.innerHeight;
-
-    menuBurger.classList.toggle('is-white-bottom', currentScroll > offsetTop + 15);
-    menuBurger.classList.toggle('is-white-top', currentScroll > offsetTop + 45);
+    menuColorChange(section);
   });
+
+  window.addEventListener('resize', () => {
+    menuColorChange(section);
+  });
+
 });
 
 /* ------------- Flipcard on mouseover and click -------------- */
