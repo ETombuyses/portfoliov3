@@ -9,14 +9,8 @@
 }
 
 .about__title {
-  position: absolute;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 30px;
-  transform: rotate(90deg);
   left: -55px;
   top: -100px;
-  color: var(--blue);
   animation: from-top-about 0.5s 0.5s forwards;
 }
 

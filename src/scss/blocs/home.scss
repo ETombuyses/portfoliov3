@@ -11,14 +11,8 @@
 }
 
 .home__title {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 30px;
-  position: absolute;
-  transform: rotate(90deg);
   left: -130px;
   top: -200px;
-  color: var(--blue);
   animation: from-top-home 0.5s 0.5s forwards;
 }
 

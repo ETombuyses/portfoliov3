@@ -29,27 +29,49 @@ main.addEventListener('click', () => {
 
 /* ------------- Menu color -------------- */
 
-const darkSections = document.querySelectorAll("[data-color='dark']")
+const darkSections = document.querySelectorAll("[data-color='dark']");
+// const lightSections = document.querySelectorAll("[data-color='light']");
+
 
 function menuColorChange(section) {
   const offsetTop = section.offsetTop;
+  const height = section.offsetHeight;
+  // console.log(height);
   currentScroll = window.scrollY + window.innerHeight;
-
-  menuBurger.classList.toggle('is-white-bottom', currentScroll > offsetTop + 15);
-  menuBurger.classList.toggle('is-white-top', currentScroll > offsetTop + 45);
+  
+  if (offsetTop < currentScroll && currentScroll < offsetTop + 46 + height) {
+    menuBurger.classList.toggle('is-white-bottom', currentScroll > offsetTop + 15 && currentScroll < offsetTop + 15 + height);
+    menuBurger.classList.toggle('is-white-top', currentScroll > offsetTop + 45 && currentScroll < offsetTop + 45 + height);
+  }
 }
 
-darkSections.forEach(section => {
 
+
+for (let i=0; i < darkSections.length; i++) {
   document.addEventListener('scroll', () => {
-    menuColorChange(section);
+    menuColorChange(darkSections[i]);
   });
+}
 
+for (let i=0; i < darkSections.length; i++) {
   window.addEventListener('resize', () => {
-    menuColorChange(section);
+    menuColorChange(darkSections[i]);  
   });
+}
 
-});
+
+
+// darkSections.forEach(section => {
+
+//   document.addEventListener('scroll', () => {
+//     menuColorChange(section);
+//   });
+
+//   window.addEventListener('resize', () => {
+//     menuColorChange(section);
+//   });
+
+// });
 
 /* ------------- Flipcard on mouseover and click -------------- */
 
