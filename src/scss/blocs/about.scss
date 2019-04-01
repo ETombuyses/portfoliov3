@@ -11,7 +11,11 @@
 .about__title {
   left: -55px;
   top: -100px;
-  animation: from-top-about 0.5s 0.5s forwards;
+  transition: top 0.5s 0.5s ease;
+
+  &.is-showed {
+    top: 85px;
+  }
 }
 
 .about__text {

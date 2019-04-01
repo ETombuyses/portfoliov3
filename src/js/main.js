@@ -36,15 +36,14 @@ const darkSections = document.querySelectorAll("[data-color='dark']");
 function menuColorChange(section) {
   const offsetTop = section.offsetTop;
   const height = section.offsetHeight;
-  // console.log(height);
-  currentScroll = window.scrollY + window.innerHeight;
+  let currentScroll = window.scrollY + window.innerHeight;
   
   if (offsetTop < currentScroll && currentScroll < offsetTop + 46 + height) {
     menuBurger.classList.toggle('is-white-bottom', currentScroll > offsetTop + 15 && currentScroll < offsetTop + 15 + height);
     menuBurger.classList.toggle('is-white-top', currentScroll > offsetTop + 45 && currentScroll < offsetTop + 45 + height);
   }
+  
 }
-
 
 
 for (let i=0; i < darkSections.length; i++) {
@@ -59,19 +58,24 @@ for (let i=0; i < darkSections.length; i++) {
   });
 }
 
+/* ------------- title animation on scroll -------------- */
 
+const titles = document.querySelectorAll('.title');
 
-// darkSections.forEach(section => {
+function showTitle(title) {
+  const offsetTop = title.parentNode.offsetTop;
+  let currentScroll = window.scrollY + window.innerHeight;
 
-//   document.addEventListener('scroll', () => {
-//     menuColorChange(section);
-//   });
+  if (currentScroll > offsetTop + 200) {
+    title.classList.add('is-showed');
+  }
+}
 
-//   window.addEventListener('resize', () => {
-//     menuColorChange(section);
-//   });
-
-// });
+for (let i=0; i < titles.length; i++) {
+  document.addEventListener('scroll', () => {
+    showTitle(titles[i]);
+  });
+}
 
 /* ------------- Flipcard on mouseover and click -------------- */
 

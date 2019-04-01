@@ -1,3 +1,28 @@
 .contact {
   background: var(--black);
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+}
+
+
+.contact__title {
+  left: -50px;
+  top: -100px;
+  transition: top 0.5s 0.5s ease;
+
+  &.is-showed {
+    top: 75px;
+  }
+}
+
+
+.contact__logo {
+  margin-bottom: 30px;
+}
+
+address {
+  line-height: 150%;
 }
