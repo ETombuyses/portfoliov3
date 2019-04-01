@@ -80,6 +80,14 @@
     content: '';
     opacity: 0;
   }
+
+  &.is-white-bottom::after {
+    background: var(--white);
+  }
+
+  &.is-white-top::before {
+    background: var(--white);
+  }
 }
 
 
@@ -130,6 +138,5 @@
 
 .menuArea__link {
   color: var(--white);
-  text-decoration: none;
   font-weight: lighter;
 }

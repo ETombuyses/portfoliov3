@@ -5,7 +5,7 @@ let cursor = document.querySelector('.cursor');
 let cursorPos = new CursorPosition(cursor);
 
 
-/* --------------  Menu ------------------*/
+/* --------------  Menu opening ------------------*/
 
 const menu = document.getElementById('menu');
 const menuArea = document.getElementById('menuArea');
@@ -27,6 +27,20 @@ main.addEventListener('click', () => {
 
 })
 
+/* ------------- Menu color -------------- */
+
+const darkSections = document.querySelectorAll("[data-color='dark']")
+
+darkSections.forEach(section => {
+  const offsetTop = section.offsetTop;
+
+  document.addEventListener('scroll', () => {
+    currentScroll = window.scrollY + window.innerHeight;
+
+    menuBurger.classList.toggle('is-white-bottom', currentScroll > offsetTop + 15);
+    menuBurger.classList.toggle('is-white-top', currentScroll > offsetTop + 45);
+  });
+});
 
 /* ------------- Flipcard on mouseover and click -------------- */
 
@@ -46,4 +60,7 @@ flipcard.addEventListener('click', () => {
 flipcard.addEventListener('mouseover', () => {
   flipcardInner.classList.toggle('to-back');
 });
+
+
+
 
