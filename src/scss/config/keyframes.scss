@@ -11,6 +11,12 @@
   }
 }
 
+@keyframes from-top {
+  100% {
+    top: 160px;
+  }
+}
+
 @keyframes visible {
   100% {
     opacity: 1;

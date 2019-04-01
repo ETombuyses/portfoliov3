@@ -7,23 +7,29 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="Portfolio of Emilie Tombuyses, a front-end developer">
   <link rel="stylesheet" href="scss/style.scss">
-  <!-- <script defer src="js/cursor.js"></script> -->
   <script defer src="js/main.js"></script>
   <title>Emilie Tombuyses - Front-end developer</title>
 </head>
 
 <body>
   <header>
-    <nav>
-      <ul>
-        <li>Home</li>
-        <li>Who I am</li>
-        <li>My works</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
+    <div id="menu" class="menu">
+      <div id="menuClickArea" class="menu__clickArea">
+        <div id ="menuBurger" class="menu__burger"></div>
+      </div>
+      <nav id="menuArea" class="menuArea">
+        <span class="menuArea__title">Menu</span>
+        <ul class="menuArea__linkList">
+          <li class="menuArea__linkItem"><a class="menuArea__link" href="#">Home</a></li>
+          <li class="menuArea__linkItem"><a class="menuArea__link" href="#about">Who I am</a></li>
+          <li class="menuArea__linkItem"><a class="menuArea__link" href="#works">My works</a></li>
+          <li class="menuArea__linkItem"><a class="menuArea__link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+  
+    </div>
   </header>
-  <main>
+  <main id="main">
     <div id='cursor' class="cursor"></div>
     <section class="home">
       <h1 class="home__title">Emilie Tombuyses</h1>
