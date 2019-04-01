@@ -36,9 +36,15 @@ const darkSections = document.querySelectorAll("[data-color='dark']");
 function menuColorChange(section) {
   const offsetTop = section.offsetTop;
   const height = section.offsetHeight;
+  const home = document.getElementById('home');
   let currentScroll = window.scrollY + window.innerHeight;
-  
-  if (offsetTop < currentScroll && currentScroll < offsetTop + 46 + height) {
+
+  if (currentScroll <= home.offsetHeight) {
+    menuBurger.classList.remove('is-white-top');
+    menuBurger.classList.remove('is-white-bottom');
+  }
+
+  else if (offsetTop < currentScroll && currentScroll < offsetTop + 46 + height) {
     menuBurger.classList.toggle('is-white-bottom', currentScroll > offsetTop + 15 && currentScroll < offsetTop + 15 + height);
     menuBurger.classList.toggle('is-white-top', currentScroll > offsetTop + 45 && currentScroll < offsetTop + 45 + height);
   }
