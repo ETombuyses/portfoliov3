@@ -11,9 +11,15 @@
   }
 }
 
-@keyframes from-top {
+@keyframes from-top-home {
   100% {
     top: 160px;
+  }
+}
+
+@keyframes from-top-about {
+  100% {
+    top: 85px;
   }
 }
 

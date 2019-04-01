@@ -30,6 +30,17 @@ class CursorPosition {
       cursor.style.display='none';
     })
 
+    const darkSections = document.querySelectorAll("[data-color='dark']")
+    darkSections.forEach(darkSection => {
+      darkSection.addEventListener('mouseover', () => {
+        cursor.classList.add('is-white');
+      });
+
+      darkSection.addEventListener('mouseout', () => {
+        cursor.classList.remove('is-white');
+      });
+    });
+
   }
 }
 

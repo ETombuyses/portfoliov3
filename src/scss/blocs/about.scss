@@ -1,0 +1,23 @@
+.about {
+  background: var(--black);
+  color: var(--white);
+  padding: 50px;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.about__title {
+  position: absolute;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 30px;
+  transform: rotate(90deg);
+  left: -55px;
+  top: -100px;
+  color: var(--blue);
+  animation: from-top-about 0.5s 0.5s forwards;
+
+}

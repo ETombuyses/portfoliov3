@@ -28,8 +28,6 @@ main.addEventListener('click', () => {
 })
 
 
-
-
 /* ------------- Flipcard on mouseover and click -------------- */
 
 // to fix : not allow click for mouse devices ? 
