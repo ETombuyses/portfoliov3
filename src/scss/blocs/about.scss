@@ -6,6 +6,10 @@
   position: relative;
   overflow: hidden;
 
+  @include desktop {
+    text-align: center;
+  }
+
 }
 
 .about__title {
@@ -30,6 +34,12 @@
   strong {
     text-transform: uppercase;
     font-weight: bolder;
+  }
+
+  @include desktop {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
   }
 }
 

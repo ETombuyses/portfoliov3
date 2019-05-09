@@ -23,7 +23,9 @@ class CursorPosition {
     })
 
     document.addEventListener('mouseover', () => {
-      cursor.style.display='block';
+      if (window.innerWidth > 800) {
+        cursor.style.display='block';
+      }
     })
 
     document.addEventListener('mouseout', () => {
@@ -40,6 +42,8 @@ class CursorPosition {
         cursor.classList.remove('is-white');
       });
     });
+
+    
 
   }
 }

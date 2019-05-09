@@ -5,6 +5,13 @@ let cursor = document.querySelector('.cursor');
 let cursorPos = new CursorPosition(cursor);
 
 
+/* --------------  force page position top after page reload ------------------*/
+
+window.onbeforeunload = function() { 
+  window.scrollTo(0,0); 
+}
+
+
 /* --------------  Menu opening ------------------*/
 
 const menu = document.getElementById('menu');
@@ -17,7 +24,6 @@ menuClickArea.addEventListener('click', () => {
   menu.classList.toggle('is-open');
   menuArea.classList.toggle('is-open');
   menuBurger.classList.toggle('is-open');
-
 });
 
 main.addEventListener('click', () => {
@@ -30,10 +36,8 @@ main.addEventListener('click', () => {
 /* ------------- Menu color -------------- */
 
 const darkSections = document.querySelectorAll("[data-color='dark']");
-// const lightSections = document.querySelectorAll("[data-color='light']");
 
-
-function menuColorChange(section) {
+const menuColorChange = section => {
   const offsetTop = section.offsetTop;
   const height = section.offsetHeight;
   const home = document.getElementById('home');
@@ -44,11 +48,10 @@ function menuColorChange(section) {
     menuBurger.classList.remove('is-white-bottom');
   }
 
-  else if (offsetTop < currentScroll && currentScroll < offsetTop + 46 + height) {
+  else if (offsetTop < currentScroll + 200 && currentScroll < offsetTop + 200 + height) {
     menuBurger.classList.toggle('is-white-bottom', currentScroll > offsetTop + 15 && currentScroll < offsetTop + 15 + height);
     menuBurger.classList.toggle('is-white-top', currentScroll > offsetTop + 45 && currentScroll < offsetTop + 45 + height);
   }
-  
 }
 
 
@@ -68,7 +71,7 @@ for (let i=0; i < darkSections.length; i++) {
 
 const titles = document.querySelectorAll('.title');
 
-function showTitle(title) {
+const showTitle = title => {
   const offsetTop = title.parentNode.offsetTop;
   let currentScroll = window.scrollY + window.innerHeight;
 
@@ -90,21 +93,25 @@ for (let i=0; i < titles.length; i++) {
 
 // to fix : not allow click for mouse devices ? 
 
+
+
 const flipcard = document.getElementById('flipcard');
 const flipcardInner = flipcard.querySelector('.flipcard__inner');
 
 setTimeout( () => {
   flipcardInner.classList.add('to-back');
-}, 1000)
+}, 1000);
 
-flipcard.addEventListener('click', () => {
-  flipcardInner.classList.toggle('to-back');
-});
 
-flipcard.addEventListener('mouseover', () => {
-  flipcardInner.classList.toggle('to-back');
-});
-
+setTimeout( () => {
+  flipcard.addEventListener('click', () => {
+    flipcardInner.classList.toggle('to-back');
+  });
+  
+  flipcard.addEventListener('mouseover', () => {
+    flipcardInner.classList.toggle('to-back');
+  });
+}, 3000);
 
 
 
