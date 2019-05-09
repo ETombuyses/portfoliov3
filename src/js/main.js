@@ -70,6 +70,8 @@ for (let i=0; i < darkSections.length; i++) {
 /* ------------- title animation on scroll -------------- */
 
 const titles = document.querySelectorAll('.title');
+let mainTitle = document.querySelector('.home__title');
+
 
 const showTitle = title => {
   const offsetTop = title.parentNode.offsetTop;
@@ -80,14 +82,19 @@ const showTitle = title => {
   }
 }
 
-for (let i=0; i < titles.length; i++) {
-  
-  showTitle(titles[i]);
+const showTitleOnResize = title => {
+  showTitle(title);
   
   document.addEventListener('scroll', () => {
-    showTitle(titles[i]);
+    showTitle(title);
   });
 }
+
+for (let i=0; i < titles.length; i++) {
+  showTitleOnResize(titles[i]);
+}
+showTitleOnResize(mainTitle);
+
 
 /* ------------- Flipcard on mouseover and click -------------- */
 
