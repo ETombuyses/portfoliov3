@@ -1,0 +1,35 @@
+.work__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include desktop {
+    width: 47%;
+    align-items: flex-end;
+  }
+}
+
+
+.work__title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.work__text {
+  font-size: 14px;
+  margin-top: 20px;
+  width: 80%;
+  display: none;
+  line-height: 150%;
+
+  @include desktop {
+    display: block;
+    text-align: end;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+} 
+
