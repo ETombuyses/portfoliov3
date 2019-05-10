@@ -8,7 +8,8 @@ let projects = [
       "Have fun playing it !"
     ],
     link : "https://tower-of-hanoi.netlify.com/",
-    image: "hanoi.33374933.svg",
+    // image: "hanoi.33374933.svg",
+    image: "assets/images/medium/hanoi.svg",
     alt: "tower of Hanoi",
     cta: "Game"
   },
@@ -91,6 +92,7 @@ const displayWorks = () => {
     link.classList.add('work__bigBox');
     link.href = projects[i].link;
     link.target = "_blank";
+    link.rel = "noopener noreferrer nofollow external";
 
     link.innerHTML= `
     <div class="work__box">
