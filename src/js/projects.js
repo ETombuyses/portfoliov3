@@ -118,14 +118,38 @@ displayWorks();
 works.appendChild(fragment);
 
 
+/* ------------- project animation on scroll -------------- */
 
-// <section class="work__display">
-//   <a href="">
-//     <div class="work__box">
-//       <div class="work__filter">
-//         <span class="work__tags">Website</span>
-//       </div>
-//       <img src="tasse.f1029df2.png" alt="nespresso-redesign">
-//     </div>
-//   </a>
-// </section>
+const myProjects = document.querySelectorAll('.work');
+
+// add a class when a project becomes visible on screen
+const showProject = project => {
+
+  // distance between element and top of page
+  const offsetScreen = project.getBoundingClientRect().top  - window.innerHeight + 100;
+
+  if (offsetScreen <= 0) {
+    project.classList.add('is-visible');
+  }
+}
+
+const showProjectOnResize = project => {
+  showProject(project);
+  
+  document.addEventListener('scroll', () => {
+    showProject(project);
+  });
+}
+
+for (let i=0; i < myProjects.length; i++) {
+  showProjectOnResize(myProjects[i]);
+}
+
+
+
+
+// window.addEventListener('scroll', () => {
+//   let test = document.querySelector('.work');
+//   let dist = test.getBoundingClientRect().top  - window.innerHeight;
+//   console.log(dist);
+// })

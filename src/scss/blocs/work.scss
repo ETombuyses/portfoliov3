@@ -9,6 +9,23 @@
     justify-content: space-between;
     min-width: 700px;
   }
+
+  &.is-visible {
+    .work__display {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .work__title {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .work__text {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }
 
 .work--odd {
@@ -17,6 +34,8 @@
   } 
 
   .work__display {
+    transform: translateX(-500px);
+    
     @include desktop {
       justify-content: flex-end;
     }
@@ -29,9 +48,15 @@
   }
 
   .work__text {
+    transform: translateX(500px);
+
     @include desktop {
       text-align: start;
     }
+  }
+
+  .work__title {
+    transform: translate(200px);
   }
 }
 
@@ -62,6 +87,9 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  opacity: 0;
+  transform: translateX(500px);
+  transition: opacity 1s, transform 1s;
 
   @include desktop {
     width: 47%;

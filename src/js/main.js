@@ -77,7 +77,7 @@ const showTitle = title => {
   const offsetTop = title.parentNode.offsetTop;
   let currentScroll = window.scrollY + window.innerHeight;
 
-  if (currentScroll > offsetTop + 100) {
+  if (currentScroll > offsetTop + 20) {
     title.classList.add('is-showed');
   }
 }
